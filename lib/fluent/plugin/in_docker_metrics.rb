@@ -57,7 +57,7 @@ module Fluent
       if @with_systemd
         path = "#{@cgroup_path}/#{metric_type}/system.slice/docker-#{id}.scope/#{metric_filename}"
       else
-        path = "#{@cgroup_path}/#{metric_type}/docker/#{id}/#{metric_filename}"
+        path = "#{@cgroup_path}/#{metric_type}/sysdefault/docker/#{id}/#{metric_filename}"
       end
 
       if File.exists?(path)
