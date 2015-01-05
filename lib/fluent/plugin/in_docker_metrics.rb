@@ -83,6 +83,7 @@ module Fluent
           data["hostname"] = @hostname
           data["id"] = id
           data["name"] = name
+          data['source'] = "#{name}.#{metric_filename}"
           mes.add(time, data)
         end
         Engine.emit_stream(tag, mes)
